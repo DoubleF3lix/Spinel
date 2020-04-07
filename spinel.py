@@ -3,7 +3,6 @@ import subprocess
 import sys
 import platform
 import psutil
-import time
 from threading import Thread
 from queue import Queue, Empty   
 
