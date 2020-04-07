@@ -57,6 +57,14 @@ On windows, the server will be automatically closed when the program runs. It do
 * threading
 * queue
 
+## Credits
+* Ravbug
+* nigel
+* Winter_Snake
+* vdvman1
+* AjaxGB
+* A2
+
 ## Planned Features
 * Built in data gathering (like player.position())
 * Built in commands (player.teleport(), server.say(), block.fill(), etc.)
