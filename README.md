@@ -56,3 +56,8 @@ On windows, the server will be automatically closed when the program runs. It do
 * psutil (install with pip)
 * threading
 * queue
+
+## Planned Features
+* Built in data gathering (like player.position())
+* Built in commands (player.teleport(), server.say(), block.fill(), etc.)
+* Automatic server closing for Mac and Linux
