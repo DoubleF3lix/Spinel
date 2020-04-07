@@ -8,8 +8,10 @@ First, download the `spinel.py` file and put it in the same file as your server.
 You'll also need to install any dependencies you don't have already below.
 
 Import Spinel by using `import spinel` at the top of your file.
-You'll need a server premade (which can be done with [Pyrite](https://github.com/Xephlon/Pyrite). Rename your server `.jar` file to `spinel_server.jar`
+You'll need a server premade (which can be done with [Pyrite])(https://github.com/Xephlon/Pyrite). Rename your server `.jar` file to `spinel_server.jar`
+
 Now, make an instance of your server with: `server = spinel.server()`. By default, this registeres the server as being in a folder named `server` which is in the same folder as `spinel.py`, but this can be changed by using `server = spinel.server(path)`.
+
 Start the server with `server.start()`.
 
 To read messages and send commands, make a while loop like so:
