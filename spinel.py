@@ -26,7 +26,7 @@ class server:
                 if (process.name() == "java.exe" and platform.system() == "Windows"):
                     process.kill()
 
-        self.pipe = subprocess.Popen(f"java -jar server.jar", cwd=self.serverDIR, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
+        self.pipe = subprocess.Popen(f"java -jar spinel_server.jar", cwd=self.serverDIR, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
         self.thread = Thread(target=self._queue, args=(self.pipe.stdout, self.queue))
         self.thread.daemon = True
         self.thread.start() 
