@@ -18,7 +18,7 @@ To read messages and send commands, make a while loop like so:
 while True:
     msg = server.latest_message()
     
-    if msg != None:
+    if msg:
         print(msg.raw) # this prints the whole message
         print(msg.author) # this prints the name of the one who sent the message
         print(msg.content) # this prints the message content
@@ -30,13 +30,13 @@ while True:
 ```
 import spinel
 
-server = spinel_server()
+server = spinel.server()
 server.start()
 
 while True:
     msg = server.latest_message()
 
-    if msg != None:
+    if msg:
         print(msg.raw)
         if msg.content.split(" ")[0] == "!math":
             result = eval(msg.content.split(" ")[1])
