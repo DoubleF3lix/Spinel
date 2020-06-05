@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setuptools.setup(
     name="Spinel",
-    version="1.1.0",
+    version="1.1.3",
     description="A minecraft server wrapper written in python.",
     long_description=long_description,
     long_description_content_type="text/markdown",

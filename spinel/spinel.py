@@ -17,7 +17,7 @@ class server:
             queue.put(line)
         stdout.close()
 
-    def start(self, kill_server=True):
+    def start(self):
         self.pipe = subprocess.Popen(f"java -jar spinel_server.jar", cwd=self.server_dir, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
         self.thread = Thread(target=self._queue, args=(self.pipe.stdout, self._queue))
         self.thread.daemon = True
