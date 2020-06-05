@@ -6,7 +6,7 @@ from queue import Queue, Empty
 
 # https://stackoverflow.com/questions/375427/non-blocking-read-on-a-subprocess-pipe-in-python
 class server:
-    def __init__(self, server_dir:str=os.path.join(os.getcwd(), "server")):
+    def __init__(self, server_dir=os.path.join(os.getcwd(), "server")):
         self.server_dir = os.path.normpath(server_dir)
         self._queue = Queue()
         self.thread = Thread()
