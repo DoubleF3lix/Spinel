@@ -3,3 +3,6 @@
 __version__ = '1.1.3'
 __author__ = 'ProfessorFelix'
 __all__ = []
+
+from .wrapper import server
+server = server

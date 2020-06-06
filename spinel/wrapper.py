@@ -6,9 +6,9 @@ from queue import Queue, Empty
 
 # https://stackoverflow.com/questions/375427/non-blocking-read-on-a-subprocess-pipe-in-python
 class server:
-    def __init__(self, server_dir=os.path.join(os.getcwd(), "server")):
-        self.server_dir = os.path.normpath(server_dir)
-        self._queue = Queue()
+    def __init__(self, serverDIR=os.path.join(os.getcwd(), "server")):
+        self.serverDIR = serverDIR
+        self.queue = Queue()
         self.thread = Thread()
         self.ON_POSIX = 'posix' in sys.builtin_module_names
 
@@ -18,14 +18,14 @@ class server:
         stdout.close()
 
     def start(self):
-        self.pipe = subprocess.Popen(f"java -jar spinel_server.jar", cwd=self.server_dir, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
-        self.thread = Thread(target=self._queue, args=(self.pipe.stdout, self._queue))
+        self.pipe = subprocess.Popen(f"java -jar spinel_server.jar", cwd=self.serverDIR, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
+        self.thread = Thread(target=self._queue, args=(self.pipe.stdout, self.queue))
         self.thread.daemon = True
         self.thread.start() 
 
-    def latest_message(self):
+    def latestMessage(self):
         try: 
-            return message(self._queue.get_nowait().replace("\n", ""))
+            return message(self.queue.get_nowait().replace("\n", ""))
         except Empty: 
             pass
 
