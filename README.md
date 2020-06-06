@@ -9,7 +9,7 @@ First, install spinel by running `pip install spinel` in the terminal.
 Import Spinel by using `import spinel` at the top of your file.
 You'll need a server premade (which can be done with [Pyrite](https://github.com/ProfessorFelix/Pyrite)). Rename your server `.jar` file to `spinel_server.jar`
 
-Now, make an instance of your server with: `server = spinel.server(path)`.
+Now, make an instance of your server with: `server = spinel.server()`. By default it will try to start `/server/spinel_server.jar`, but the directory can be changed by setting `serverDIR` like so: `server = spinel.server("D:/my/custom/server/")`. Do not include `spinel_server.jar` in the directory.
 
 Start the server with `server.start()`.
 
