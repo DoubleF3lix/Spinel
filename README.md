@@ -9,7 +9,7 @@ First, install spinel by running `pip install spinel` in the terminal.
 Import Spinel by using `import spinel` at the top of your file.
 You'll need a server premade (which can be done with [Pyrite](https://github.com/ProfessorFelix/Pyrite)). Rename your server `.jar` file to `spinel_server.jar`
 
-Now, make an instance of your server with: `server = spinel.server()`. By default it will try to start `/server/spinel_server.jar`, but the directory can be changed by setting `serverDIR` like so: `server = spinel.server("D:/my/custom/server/")`. Do not include `spinel_server.jar` in the directory.
+Now, make an instance of your server with: `server = spinel.server(path)`.
 
 Start the server with `server.start()`.
 
@@ -47,6 +47,7 @@ while True:
 This code prints all messages to the python terminal and allows the user to perform basic math using the `!math` command.
 
 ## Note
+If you print just `msg`, then it will print `msg.raw` instead. It is reccomended you use `msg.raw` anyway to be more explicit.
 You'll need to manually close your server terminal before relaunching 
 
 ## Dependencies
