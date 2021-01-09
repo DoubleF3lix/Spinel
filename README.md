@@ -59,7 +59,7 @@ You'll need to manually close your server terminal before relaunching
 
 ## Credits
 * Ravbug
-* nigel
+* Princess
 * Winter_Snake
 * vdvman1
 * AjaxGB
