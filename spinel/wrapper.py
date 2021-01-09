@@ -33,7 +33,7 @@ class server:
             pass
 
     def write(self, msg):
-        self.pipe.stdin.write(msg + "\n")
+        self.pipe.stdin.write(msg + "\r")
 
 class message:
     def __init__(self, message):
