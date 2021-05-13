@@ -8,7 +8,7 @@ with open("README.md", "r") as readme:
 setup(
     name="spinel",
     version="1.1.4",
-    url="https://github.com/DoubleFelix/Spinel",
+    url="https://github.com/DoubleF3lix/Spinel",
     license='GNU General Public License v3.0',
 
     author="DoubleFelix",
