@@ -2,7 +2,7 @@ import os
 import subprocess
 import sys
 from threading import Thread
-from queue import Queue, Empty   
+from queue import Queue, Empty 
 
 # https://stackoverflow.com/questions/375427/non-blocking-read-on-a-subprocess-pipe-in-python
 class server:
@@ -20,11 +20,22 @@ class server:
             self.server_output.append(line.replace("\n", ""))
         stdout.close()
 
-    def start(self):
-        self.pipe = subprocess.Popen(f"java -jar spinel_server.jar", cwd=self.server_dir, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
+    def start(self, wait_for_server=True, nogui=False):
+        startup_cmd = "java -jar spinel_server.jar"
+        if nogui:
+            startup_cmd += " --nogui"
+        self.pipe = subprocess.Popen(startup_cmd, cwd=self.server_dir, stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=True, text=True, bufsize=1, close_fds=self.ON_POSIX)
         self.thread = Thread(target=self._queue, args=(self.pipe.stdout, self.queue))
         self.thread.daemon = True
         self.thread.start() 
+
+        if wait_for_server:
+            server_up = False
+            # Wait for the server to startup by checking for the "help" message
+            while not server_up:
+                for line in self.server_output:
+                    if "For help, type \"help\"" in line:
+                        server_up = True
 
     def latest_message(self):
         try: 
