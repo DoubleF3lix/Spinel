@@ -14,7 +14,7 @@ Now, make an instance of your server with: `server = spinel.server(path)`.
 Start the server with `server.start()`.
 
 To read messages and send commands, make a while loop like so:
-```
+```py
 while True:
     msg = server.latest_message()
     
@@ -27,7 +27,7 @@ while True:
 ```
 
 ## Example
-```
+```py
 import spinel
 
 server = spinel.server()
@@ -59,8 +59,9 @@ You'll need to manually close your server terminal before relaunching
 
 ## Credits
 * Ravbug
-* nigel
+* Princess
 * Winter_Snake
 * vdvman1
 * AjaxGB
 * A2
+* PeerHeer
