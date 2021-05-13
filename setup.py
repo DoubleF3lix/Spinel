@@ -1,30 +1,20 @@
-from setuptools import find_packages
-from setuptools import setup
-
+import setuptools
 
 with open("README.md", "r") as readme:
-    long_desc = readme.read()
+    long_description = readme.read()
 
-setup(
+setuptools.setup(
     name="spinel",
-    version="1.1.4",
-    url="https://github.com/DoubleF3lix/Spinel",
-    license='GNU General Public License v3.0',
-
-    author="DoubleFelix",
-
+    version="1.1.5",
     description="A minecraft server wrapper written in python",
-    long_description=long_desc,
+    long_description=long_description,
     long_description_content_type="text/markdown",
-
-    packages=find_packages(),
-
-    install_requires=[],
-
+    url="https://github.com/DoubleF3lix/Spinel/",
+    packages=setuptools.find_packages(),
     classifiers=[
-        "Operating System :: OS Independent",
-        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.6',
 )
